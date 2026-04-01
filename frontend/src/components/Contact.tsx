@@ -61,7 +61,7 @@ export default function Contact() {
     if (!validate()) return
     setStatus('loading')
     try {
-      const res = await axios.post('/api/contact', form)
+      const res = await axios.post('https://portfolio-backend-ashish.onrender.com/api/contact', form)
       setServerMsg(res.data.message)
       setStatus('success')
       setForm(initial)
