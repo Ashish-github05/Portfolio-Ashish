@@ -94,14 +94,4 @@ App will be available at `http://localhost:5173`
 - class-validator / class-transformer
 - TypeScript
 
-## Customization
-
-Update `frontend/src/data/portfolioData.ts` with your own:
-- Personal info (name, email, social links)
-- Skills
-- Work experience
-- Projects
-- Achievements
-- Testimonials
-
-Update `backend/src/portfolio/portfolio.service.ts` to match (or connect a database).
+Link: https://ashish-github05.github.io/Portfolio-Ashish/
