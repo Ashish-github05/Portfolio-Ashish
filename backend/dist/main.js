@@ -6,7 +6,12 @@ const common_1 = require("@nestjs/common");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
-        origin: ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:4173'],
+        origin: [
+            'http://localhost:5173',
+            'http://localhost:3000',
+            'http://localhost:4173',
+            'https://ashish-github05.github.io',
+        ],
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['Content-Type', 'Authorization'],
         credentials: true,
