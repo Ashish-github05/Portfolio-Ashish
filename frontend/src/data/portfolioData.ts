@@ -11,7 +11,7 @@ export const personalInfo = {
   github: 'https://github.com/Ashish-github05',
   linkedin: 'https://www.linkedin.com/in/ashish-kumar05/',
   twitter: 'https://twitter.com/',
-  resume: 'https://drive.google.com/file/d/1ZMP_d4UBuWSI3XhsIx1r5GU7K5ON0mRE/view?usp=sharing',
+  resume: 'https://drive.google.com/file/d/17Pu1TyPxrTzAHbUblmH6eIOq_yZGW6LJ/view?usp=sharing',
 }
 
 export const stats = [
