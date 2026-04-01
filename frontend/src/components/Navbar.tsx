@@ -107,7 +107,7 @@ export default function Navbar() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://drive.google.com/file/d/1Jjx3s-XdSLrKE9EmHNkvSfBsZ6GOgTwY/view?usp=sharing"
+            href="https://drive.google.com/file/d/1ZMP_d4UBuWSI3XhsIx1r5GU7K5ON0mRE/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-primary-500 hover:bg-primary-600 text-white text-sm font-semibold transition-colors shadow-glow"
