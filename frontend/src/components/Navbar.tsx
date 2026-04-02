@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiSun, FiMoon, FiMenu, FiX, FiDownload } from 'react-icons/fi'
+import { FiSun, FiMoon, FiMenu, FiX, FiDownload, FiCalendar } from 'react-icons/fi'
 import { useTheme } from '../context/ThemeContext'
+import { PopupModal } from 'react-calendly'
+
+const CALENDLY_URL = 'https://calendly.com/ak946417/30min'
 
 const links = [
   { label: 'Home', href: 'home' },
@@ -18,6 +21,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [active, setActive] = useState('home')
+  const [calendlyOpen, setCalendlyOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
@@ -116,6 +120,16 @@ export default function Navbar() {
             Resume
           </motion.a>
 
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setCalendlyOpen(true)}
+            className="hidden md:flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-green-500 hover:bg-green-600 text-white text-sm font-semibold transition-colors shadow-lg shadow-green-500/25"
+          >
+            <FiCalendar size={15} />
+            Book Interview
+          </motion.button>
+
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -166,10 +180,24 @@ export default function Navbar() {
                 <FiDownload size={15} />
                 Download Resume
               </a>
+              <button
+                onClick={() => { setCalendlyOpen(true); setMobileOpen(false) }}
+                className="flex items-center justify-center gap-2 mt-2 py-2.5 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold w-full transition-colors"
+              >
+                <FiCalendar size={15} />
+                Book Interview
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <PopupModal
+        url={CALENDLY_URL}
+        onModalClose={() => setCalendlyOpen(false)}
+        open={calendlyOpen}
+        rootElement={document.body}
+      />
     </motion.nav>
   )
 }

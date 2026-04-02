@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { FiArrowDown, FiExternalLink, FiMail, FiCalendar } from 'react-icons/fi'
+import { FiArrowDown, FiExternalLink, FiMail } from 'react-icons/fi'
 import { personalInfo } from '../data/portfolioData'
 import { useTheme } from '../context/ThemeContext'
-import { PopupModal } from 'react-calendly'
-
-// 👉 Replace with your Calendly URL: https://calendly.com/your-username
-const CALENDLY_URL = 'https://calendly.com/ak946417'
 
 const roles = [
   'Full Stack Developer',
@@ -82,7 +78,6 @@ function TerminalWindow({ isDark }: { isDark: boolean }) {
 
 export default function Hero() {
   const { isDark } = useTheme()
-  const [calendlyOpen, setCalendlyOpen] = useState(false)
   const [roleIdx, setRoleIdx] = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [deleting, setDeleting] = useState(false)
@@ -232,23 +227,7 @@ export default function Hero() {
                 Contact Me
               </motion.button>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setCalendlyOpen(true)}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold transition-colors shadow-lg shadow-green-500/25"
-              >
-                <FiCalendar size={17} />
-                Book Interview
-              </motion.button>
             </motion.div>
-
-            <PopupModal
-              url={CALENDLY_URL}
-              onModalClose={() => setCalendlyOpen(false)}
-              open={calendlyOpen}
-              rootElement={document.body}
-            />
 
             {/* Social */}
             <motion.div
