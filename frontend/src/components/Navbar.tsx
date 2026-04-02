@@ -172,20 +172,20 @@ export default function Navbar() {
                 </button>
               ))}
               <a
-                href="https://drive.google.com/file/d/1Jjx3s-XdSLrKE9EmHNkvSfBsZ6GOgTwY/view?usp=sharing"
+                href="https://drive.google.com/file/d/17Pu1TyPxrTzAHbUblmH6eIOq_yZGW6LJ/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 mt-3 py-2.5 rounded-xl bg-primary-500 text-white text-sm font-semibold"
               >
                 <FiDownload size={15} />
-                Download Resume
+                Resume
               </a>
               <button
                 onClick={() => { setCalendlyOpen(true); setMobileOpen(false) }}
                 className="flex items-center justify-center gap-2 mt-2 py-2.5 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold w-full transition-colors"
               >
                 <FiCalendar size={15} />
-                Book Interview
+                Book Meeting
               </button>
             </div>
           </motion.div>
