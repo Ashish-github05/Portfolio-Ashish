@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FiMessageCircle, FiX, FiSend } from 'react-icons/fi'
 import { FaRobot } from 'react-icons/fa'
 import { useTheme } from '../context/ThemeContext'
+import ReactMarkdown from 'react-markdown'
 
 const API_BASE = 'https://porfolio-ashish.onrender.com/api'
 
@@ -212,7 +213,19 @@ export default function ChatBot() {
                             : 'bg-gray-100 text-gray-800 rounded-bl-sm'
                         }`}
                       >
-                        {msg.content || (
+                        {msg.content ? (
+                          <ReactMarkdown
+                            components={{
+                              p: ({ children }) => <p className="mb-1 last:mb-0">{children}</p>,
+                              strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+                              ol: ({ children }) => <ol className="list-decimal pl-4 space-y-0.5">{children}</ol>,
+                              ul: ({ children }) => <ul className="list-disc pl-4 space-y-0.5">{children}</ul>,
+                              li: ({ children }) => <li>{children}</li>,
+                            }}
+                          >
+                            {msg.content}
+                          </ReactMarkdown>
+                        ) : (
                           <span className="flex gap-1 items-center py-0.5">
                             {[0, 1, 2].map((j) => (
                               <motion.span
