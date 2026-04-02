@@ -18,8 +18,10 @@ export class ChatbotController {
       for await (const chunk of this.chatbotService.streamChat(dto.messages)) {
         res.write(`data: ${JSON.stringify({ text: chunk })}\n\n`);
       }
-    } catch {
-      res.write(`data: ${JSON.stringify({ error: 'Something went wrong. Please try again.' })}\n\n`);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.error('[Chatbot error]', msg);
+      res.write(`data: ${JSON.stringify({ error: msg })}\n\n`);
     }
 
     res.write('data: [DONE]\n\n');
