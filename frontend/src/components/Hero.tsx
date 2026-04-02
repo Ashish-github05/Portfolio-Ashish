@@ -305,9 +305,9 @@ export default function Hero() {
         >
           {[
             { v: '2+', l: 'Years Experience', c: 'text-blue-400' },
-            { v: '15+', l: 'Projects Delivered', c: 'text-purple-400' },
-            { v: '20+', l: 'Happy Clients', c: 'text-green-400' },
-            { v: '20+', l: 'Technologies', c: 'text-pink-400' },
+            { v: '5+', l: 'Projects Delivered', c: 'text-purple-400' },
+            { v: '3+', l: 'Happy Clients', c: 'text-green-400' },
+            { v: '10+', l: 'Technologies', c: 'text-pink-400' },
           ].map(({ v, l, c }) => (
             <div key={l} className="text-center">
               <div className={`text-3xl sm:text-4xl font-black ${c} mb-1`}>{v}</div>

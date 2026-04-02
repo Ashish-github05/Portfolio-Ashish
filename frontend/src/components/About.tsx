@@ -190,9 +190,9 @@ export default function About() {
             <div className="grid grid-cols-2 gap-3">
               {[
                 { v: '2+', l: 'Years Coding', g: 'from-blue-500 to-cyan-500' },
-                { v: '15+', l: 'Projects Done', g: 'from-purple-500 to-pink-500' },
-                { v: '20+', l: 'Happy Clients', g: 'from-green-500 to-emerald-500' },
-                { v: '20+', l: 'Technologies', g: 'from-orange-500 to-red-500' },
+                { v: '5+', l: 'Projects Done', g: 'from-purple-500 to-pink-500' },
+                { v: '3+', l: 'Happy Clients', g: 'from-green-500 to-emerald-500' },
+                { v: '10+', l: 'Technologies', g: 'from-orange-500 to-red-500' },
               ].map(({ v, l, g }) => (
                 <div key={l} className={`rounded-2xl p-5 ${card} text-center`}>
                   <div className={`text-3xl font-black bg-gradient-to-r ${g} bg-clip-text text-transparent mb-1`}>

@@ -47,8 +47,8 @@ export class PortfolioService {
       stats: [
         { label: 'Years Experience', value: '2+' },
         { label: 'Projects Completed', value: '5+' },
-        { label: 'Happy Clients', value: '20+' },
-        { label: 'Technologies', value: '20+' },
+        { label: 'Happy Clients', value: '3+' },
+        { label: 'Technologies', value: '10+' },
       ],
     };
   }
@@ -60,11 +60,11 @@ export class PortfolioService {
         icon: 'monitor',
         color: 'from-blue-500 to-cyan-500',
         items: [
-          { name: 'React', level: 95 },
-          { name: 'TypeScript', level: 90 },
-          { name: 'JavaScript', level: 95 },
-          { name: 'HTML / CSS', level: 92 },
-          { name: 'Tailwind CSS', level: 88 },
+          { name: 'React', level: 85 },
+          { name: 'TypeScript', level: 75 },
+          { name: 'JavaScript', level: 85 },
+          { name: 'HTML / CSS', level: 90 },
+          { name: 'Tailwind CSS', level: 80 },
           { name: 'Next.js', level: 80 },
         ],
       },
@@ -97,12 +97,12 @@ export class PortfolioService {
         icon: 'tool',
         color: 'from-purple-500 to-pink-500',
         items: [
-          { name: 'Git & GitHub', level: 95 },
-          { name: 'Docker', level: 82 },
-          { name: 'AWS', level: 76 },
-          { name: 'CI/CD', level: 78 },
-          { name: 'Linux', level: 80 },
-          { name: 'Nginx', level: 72 },
+          { name: 'Git & GitHub', level: 85 },
+          { name: 'Docker', level: 75 },
+          { name: 'AWS', level: 75 },
+          { name: 'CI/CD', level: 70 },
+          { name: 'Linux', level: 65 },
+          { name: 'Nginx', level: 65 },
         ],
       },
     ];
