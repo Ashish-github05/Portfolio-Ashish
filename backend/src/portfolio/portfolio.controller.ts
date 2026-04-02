@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { PortfolioService } from './portfolio.service';
 
 @Controller('portfolio')
@@ -38,5 +38,15 @@ export class PortfolioController {
   @Get('testimonials')
   getTestimonials() {
     return this.portfolioService.getTestimonials();
+  }
+
+  @Get('visitors')
+  getVisitorCount() {
+    return this.portfolioService.getVisitorCount();
+  }
+
+  @Post('visitors')
+  incrementVisitorCount() {
+    return this.portfolioService.incrementVisitorCount();
   }
 }

@@ -1,4 +1,33 @@
 import { Injectable } from '@nestjs/common';
+import * as fs from 'fs';
+import * as path from 'path';
+
+const VISITORS_FILE = path.join(__dirname, '..', '..', 'data', 'visitors.json');
+
+function readCount(): number {
+  try {
+    const dir = path.dirname(VISITORS_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    if (!fs.existsSync(VISITORS_FILE)) {
+      fs.writeFileSync(VISITORS_FILE, JSON.stringify({ count: 0 }));
+      return 0;
+    }
+    const data = JSON.parse(fs.readFileSync(VISITORS_FILE, 'utf-8'));
+    return data.count || 0;
+  } catch {
+    return 0;
+  }
+}
+
+function writeCount(count: number): void {
+  try {
+    const dir = path.dirname(VISITORS_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(VISITORS_FILE, JSON.stringify({ count }));
+  } catch {
+    // ignore write errors
+  }
+}
 
 @Injectable()
 export class PortfolioService {
@@ -262,6 +291,16 @@ export class PortfolioService {
         rating: 5,
       },
     ];
+  }
+
+  getVisitorCount(): { count: number } {
+    return { count: readCount() };
+  }
+
+  incrementVisitorCount(): { count: number } {
+    const count = readCount() + 1;
+    writeCount(count);
+    return { count };
   }
 
   getAllData() {

@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from 'react-icons/fa'
 import { FiArrowUp } from 'react-icons/fi'
 import { personalInfo } from '../data/portfolioData'
 import { useTheme } from '../context/ThemeContext'
+import VisitorCounter from './VisitorCounter'
 
 const navLinks = [
   { label: 'Home', href: 'home' },
@@ -125,6 +126,7 @@ export default function Footer() {
           <p className={`text-sm ${isDark ? 'text-gray-600' : 'text-gray-400'}`}>
             © {new Date().getFullYear()} Ashish Kumar. All rights reserved.
           </p>
+          <VisitorCounter />
           <p className={`text-sm flex items-center gap-1.5 ${isDark ? 'text-gray-600' : 'text-gray-400'}`}>
             Built with
             <FaHeart size={13} className="text-red-500 animate-pulse" />
